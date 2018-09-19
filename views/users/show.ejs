@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="row ml-5">
+   <div class="col-md-8">
+      <div class="card">
+          <img class="card-img-top" src="<%= user.avatar %>" alt="Card image cap">
+          <div class="card-body">
+          <h5 class="card-title"> <%= user.firstName + " " + user.lastName %> </h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec sed tellus magna. Sed mauris lorem, euismod vitae risus vitae, fringilla iaculis elit.
+          Integer vitae sapien pharetra, efficitur est id, scelerisque sem. Aenean convallis massa in neque lobortis ultricies. 
+          Donec euismod lacus nec tellus luctus, a tempus quam dapibus. Vestibulum quis sem varius, pretium eros sed, luctus neque.
+          Proin pulvinar in dui ac tincidunt. Sed faucibus nisl eget finibus accumsan.
+          Proin in volutpat libero. Nunc urna nunc, pulvinar nec ante ac, pulvinar semper odio.</p>
+          <a href="/campgrounds/" class="btn btn-primary">Back</a>
+          </div>
+      </div>
+   </div>
+   
+   <div class="col-md-4">
+      <h3> <%= user.username %>'s campgrounds: </h3>
+      <ul>
+         <% campgrounds.forEach(function(campground){  %>
+               <li> <a href="/campgrounds/<%= campground._id %>"> <%= campground.name %> </a> </li>
+         <% }); %>
+      </ul>
+   </div>
+</div>
+
+<% include ../partials/footer %>
